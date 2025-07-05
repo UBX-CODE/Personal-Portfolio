@@ -1,15 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // import myPhoto from './assets/2.jpg';
 import styled from 'styled-components';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function App() {
+  // Register GSAP plugins
+  gsap.registerPlugin(ScrollTrigger);
+  
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const heroNameRef = React.useRef(null);
+  const heroNameRef = useRef(null);
   const [eyePos, setEyePos] = useState({ x: 0, y: 0 });
   const [lightTheme, setLightTheme] = useState(false);
   const [showFullStack, setShowFullStack] = useState(true);
+  
+  // Refs for sections
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // Smooth scroll function
+  const smoothScrollTo = (targetId) => {
+    const target = document.getElementById(targetId);
+    if (target) {
+      gsap.to(window, {
+        duration: 1.5,
+        scrollTo: { y: target, offsetY: 80 },
+        ease: "power2.inOut"
+      });
+    }
+  };
 
   // Handle scroll to animate sections and update active nav link
   useEffect(() => {
@@ -88,7 +114,11 @@ export default function App() {
               {['Home', 'About', 'Projects', 'Contact'].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`#${item.toLowerCase()}`} 
+                    href={`#${item.toLowerCase()}`}
+                    onClick={e => {
+                      e.preventDefault();
+                      smoothScrollTo(item.toLowerCase());
+                    }}
                     className={`text-sm uppercase tracking-wider hover:text-purple-400 transition-colors duration-300 ${
                       activeSection === item.toLowerCase() ? 'text-purple-400' : ''
                     }`}
@@ -121,11 +151,15 @@ export default function App() {
             {['Home', 'About', 'Projects', 'Contact'].map((item) => (
               <li key={item}>
                 <a 
-                  href={`#${item.toLowerCase()}`} 
+                  href={`#${item.toLowerCase()}`}
+                  onClick={e => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    smoothScrollTo(item.toLowerCase());
+                  }}
                   className={`block text-lg hover:text-purple-400 transition-colors duration-300 ${
                     activeSection === item.toLowerCase() ? 'text-purple-400' : ''
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
                 </a>
