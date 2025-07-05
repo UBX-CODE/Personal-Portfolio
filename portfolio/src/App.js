@@ -6,10 +6,8 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  // const [fastStars, setFastStars] = useState(false);
   const heroNameRef = React.useRef(null);
   const [attractStars, setAttractStars] = useState(false);
-  const [heroNamePos, setHeroNamePos] = useState({ x: 0, y: 0 });
   const [orbitAngle, setOrbitAngle] = useState(0);
   const [eyePos, setEyePos] = useState({ x: 0, y: 0 });
   const [lightTheme, setLightTheme] = useState(false);
@@ -194,7 +192,7 @@ export default function App() {
                 <a href="#projects" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
                   View Projects
                 </a>
-                <a href="#" download className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
+                <a href="/resume.pdf" download className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
                   Download CV
                 </a>
               </div>
@@ -450,7 +448,9 @@ export default function App() {
                         React • Node.js • MongoDB
                       </div>
                       <a 
-                        href="#" 
+                        href="https://github.com/UBX-CODE/netflix-clone" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium group"
                       >
                         View Details
@@ -500,7 +500,9 @@ export default function App() {
                         React • Express • Socket.io
                       </div>
                       <a 
-                        href="#" 
+                        href="https://github.com/UBX-CODE/twitter-clone" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium group"
                       >
                         View Details
@@ -550,7 +552,9 @@ export default function App() {
                         React Native • Node.js • PostgreSQL
                       </div>
                       <a 
-                        href="#" 
+                        href="https://github.com/UBX-CODE/uber-clone" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium group"
                       >
                         View Details
@@ -600,7 +604,9 @@ export default function App() {
                         React • Django • PostgreSQL
                       </div>
                       <a 
-                        href="#" 
+                        href="https://github.com/UBX-CODE/facebook-clone" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium group"
                       >
                         View Details
