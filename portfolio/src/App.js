@@ -669,12 +669,21 @@ export default function App() {
             
             <div className="grid grid-cols-1 gap-10">
               <div {...fadeInUp(200)} className="flex flex-col items-center gap-8">
-                <form className="space-y-6 w-full max-w-2xl p-8 rounded-2xl shadow-xl bg-gradient-to-br from-gray-900/80 to-purple-900/80 border border-purple-700/40 backdrop-blur">
+                <form 
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true"
+                  action="/success.html"
+                  className="space-y-6 w-full max-w-2xl p-8 rounded-2xl shadow-xl bg-gradient-to-br from-gray-900/80 to-purple-900/80 border border-purple-700/40 backdrop-blur"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold mb-2 text-purple-300 tracking-wide">Name</label>
                     <input 
                       type="text" 
                       id="name" 
+                      name="name"
+                      required
                       className="w-full px-5 py-3 bg-gray-800/80 border border-purple-700/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 shadow-inner transition-all duration-200"
                       placeholder="Your name"
                     />
@@ -685,6 +694,8 @@ export default function App() {
                     <input 
                       type="email" 
                       id="email" 
+                      name="email"
+                      required
                       className="w-full px-5 py-3 bg-gray-800/80 border border-purple-700/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 shadow-inner transition-all duration-200"
                       placeholder="your@email.com"
                     />
@@ -694,6 +705,8 @@ export default function App() {
                     <label htmlFor="message" className="block text-sm font-semibold mb-2 text-purple-300 tracking-wide">Message</label>
                     <textarea 
                       id="message" 
+                      name="message"
+                      required
                       rows="5" 
                       className="w-full px-5 py-3 bg-gray-800/80 border border-purple-700/40 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400 shadow-inner transition-all duration-200 resize-none"
                       placeholder="Your message..."
