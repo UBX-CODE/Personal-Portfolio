@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "cd portfolio && npm run build"
+  },
   "dependencies": {
     "gh-pages": "^6.3.0",
     "react-router-dom": "^7.6.3",
