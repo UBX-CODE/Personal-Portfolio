@@ -741,8 +741,6 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div
               className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-4 md:mb-0 cursor-pointer"
-              onMouseEnter={() => setFastStars(true)}
-              onMouseLeave={() => setFastStars(false)}
             >
               Ujjawal Bhardwaj
             </div>
@@ -754,7 +752,7 @@ export default function App() {
       </footer>
 
       {/* Add custom animations for blobs */}
-      <style jsx>{`
+      <style>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }
           33% { transform: translate(30px, -50px) scale(1.1); }
@@ -934,7 +932,9 @@ export default function App() {
   );
 }
 
-const SkillCard = styled.div`
+const SkillCard = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'lightTheme'
+})`
   width: 400px;
   height: 280px;
   background: ${props => props.lightTheme ? 'rgba(248, 249, 250, 0.1)' : 'rgba(22, 22, 29, 0.1)'};
