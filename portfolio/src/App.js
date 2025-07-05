@@ -19,11 +19,11 @@ export default function App() {
   const [lightTheme, setLightTheme] = useState(false);
   const [showFullStack, setShowFullStack] = useState(true);
   
-  // Refs for sections
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+  // Refs for sections (commented out for future use)
+  // const homeRef = useRef(null);
+  // const aboutRef = useRef(null);
+  // const projectsRef = useRef(null);
+  // const contactRef = useRef(null);
 
   // Smooth scroll function
   const smoothScrollTo = (targetId) => {
