@@ -7,8 +7,6 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const heroNameRef = React.useRef(null);
-  const [attractStars, setAttractStars] = useState(false);
-  const [orbitAngle, setOrbitAngle] = useState(0);
   const [eyePos, setEyePos] = useState({ x: 0, y: 0 });
   const [lightTheme, setLightTheme] = useState(false);
   const [showFullStack, setShowFullStack] = useState(true);
@@ -38,19 +36,7 @@ export default function App() {
     },
   });
 
-  useEffect(() => {
-    let frame;
-    if (attractStars) {
-      const animate = () => {
-        setOrbitAngle((prev) => prev + 0.003);
-        frame = requestAnimationFrame(animate);
-      };
-      frame = requestAnimationFrame(animate);
-    } else {
-      setOrbitAngle(0);
-    }
-    return () => cancelAnimationFrame(frame);
-  }, [attractStars]);
+
 
   // Mouse move handler for About section
   const handleAboutMouseMove = (e) => {
@@ -884,18 +870,7 @@ export default function App() {
       {/* Twinkling and Moving Stars Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {starsRef.current.map((star, i) => {
-          const moveDuration = attractStars ? 1 : star.baseDuration;
-          let attractTransform = '';
-          if (attractStars) {
-            const [winW, winH] = [window.innerWidth, window.innerHeight];
-            const starX = (star.left / 100) * winW;
-            const starY = (star.top / 100) * winH;
-            const angle = orbitAngle + (i * (2 * Math.PI / 120));
-            const radius = 80 + 40 * Math.sin(angle);
-            const orbitX = heroNamePos.x + radius * Math.cos(angle);
-            const orbitY = heroNamePos.y + radius * Math.sin(angle);
-            attractTransform = `translate(${orbitX - starX}px, ${orbitY - starY}px)`;
-          }
+          const moveDuration = star.baseDuration;
           return (
             <div
               key={i}
@@ -909,11 +884,7 @@ export default function App() {
                 left: `${star.left}%`,
                 opacity: 0.7,
                 filter: 'blur(0.5px) brightness(1.2) drop-shadow(0 0 6px #fff)',
-                transition: attractStars ? 'transform 2s cubic-bezier(0.7,0,0.7,1)' : undefined,
-                transform: attractStars ? attractTransform : undefined,
-                animation: attractStars
-                  ? `twinkle ${star.twinkle}s infinite alternate`
-                  : `twinkle ${star.twinkle}s infinite alternate, moveStar ${moveDuration}s ease-in-out infinite alternate`,
+                animation: `twinkle ${star.twinkle}s infinite alternate, moveStar ${moveDuration}s ease-in-out infinite alternate`,
                 '--move-x': `${star.moveX}px`,
                 '--move-y': `${star.moveY}px`,
               }}
