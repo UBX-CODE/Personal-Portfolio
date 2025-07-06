@@ -212,9 +212,7 @@ npm test -- --coverage --watchAll=false
 ## 👤 Author
 
 **Ujjawal Bhardwaj**
-- Portfolio: [https://your-portfolio-url.com]((https://ujjawal-portfolio.netlify.app/))
-- LinkedIn: [[Your LinkedIn Profile](https://www.linkedin.com/in/ujjawal-bhardwaj-643625372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)]
-- GitHub: [[Your GitHub Profile](https://github.com/UBX-CODE)]
+- Portfolio: [[https://your-portfolio-url.com](https://ujjawal-portfolio.netlify.app/)]
 - Email: [Ujjwalsharma1910@gmail.com]
 
 ## 🙏 Acknowledgments
