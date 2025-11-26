@@ -31,7 +31,7 @@ const Footer = () => {
                         <FaInstagram className="text-xl" />
                     </a>
                     <a
-                        href="#"
+                        href="https://twitter.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-purple-500 hover:-translate-y-1 transition-all"

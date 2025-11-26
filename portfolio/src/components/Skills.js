@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaJava, FaPython, FaReact, FaNodeJs, FaAws, FaGitAlt, FaDatabase, FaLinux, FaCode, FaNetworkWired, FaServer } from 'react-icons/fa';
-import { SiMongodb, SiMysql, SiNextdotjs, SiExpress, SiTailwindcss, SiTypescript, SiDocker, SiPostman, SiFirebase, SiHtml5, SiCss3 } from 'react-icons/si';
+import { SiMongodb, SiMysql, SiNextdotjs, SiExpress, SiTailwindcss, SiTypescript, SiPostman, SiFirebase, SiHtml5, SiCss3 } from 'react-icons/si';
 
 const Skills = () => {
     const skillCategories = [
