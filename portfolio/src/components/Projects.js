@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa';
 
 const Projects = () => {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-
     const projects = [
         {
             title: 'Unirank',
@@ -56,8 +54,6 @@ const Projects = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
                             className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
                         >
                             {/* Project Image */}
                             <div className="lg:w-3/5 w-full relative group perspective-1000">
