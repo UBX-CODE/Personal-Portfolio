@@ -78,7 +78,7 @@ const Skills = () => {
                     <div className="h-1 w-20 bg-purple-500 rounded-full"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={idx}
@@ -86,22 +86,22 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className="bg-[#111] border border-white/10 p-6 rounded-2xl hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-300 group"
+                            className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 group"
                         >
-                            <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
-                                <div className="text-2xl p-2 bg-white/5 rounded-lg group-hover:scale-110 transition-transform">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="text-3xl p-3 bg-white/5 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-white font-mono">
+                                <h3 className="text-xl font-bold text-white font-mono tracking-tight">
                                     {category.title}
                                 </h3>
                             </div>
 
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-2">
                                 {category.skills.map((skill, sIdx) => (
                                     <div
                                         key={sIdx}
-                                        className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/5 rounded-full text-gray-300 text-sm hover:text-white hover:bg-white/10 hover:border-purple-500/30 transition-all cursor-default"
+                                        className="flex items-center gap-2 px-3 py-1.5 bg-black/20 rounded-lg text-gray-300 text-sm border border-white/5 hover:text-white hover:border-white/20 transition-all cursor-default"
                                     >
                                         <span className="text-purple-400">{skill.icon}</span>
                                         <span>{skill.name}</span>

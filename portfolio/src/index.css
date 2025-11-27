@@ -20,7 +20,6 @@ code, pre, .font-mono {
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 12px; /* Scales down the entire UI (1rem = 12px instead of 16px) */
 }
 

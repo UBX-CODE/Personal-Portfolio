@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { ReactLenis } from '@studio-freight/react-lenis';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import StarFieldBackground from './components/StarFieldBackground';
 import LoadingScreen from './components/LoadingScreen';
+import { BackgroundGradientAnimation } from './components/ui/BackgroundGradientAnimation';
 
 import './App.css';
 
@@ -33,47 +33,59 @@ export default function App() {
     }
   };
 
-  // Handle scroll to update active nav link
+  // Handle scroll to update active nav link using IntersectionObserver
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'certifications', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-          }
-        }
-      }
+    const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of the viewport
+      threshold: 0
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="min-h-screen relative bg-black text-white selection:bg-purple-500 selection:text-white font-sans">
-      <LoadingScreen />
-      <StarFieldBackground />
+    <ReactLenis root>
+      <div className="min-h-screen relative bg-black text-white selection:bg-purple-500 selection:text-white font-sans">
+        <LoadingScreen />
 
-      <Navbar
-        activeSection={activeSection}
-        smoothScrollTo={smoothScrollTo}
-      />
+        <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 z-0"></div>
+        </BackgroundGradientAnimation>
 
-      <main className="relative z-10">
-        <Hero smoothScrollTo={smoothScrollTo} />
-        <About />
-        <Skills />
-        <Certifications />
-        <Projects />
-        <Contact />
-      </main>
+        <div className="relative z-10">
+          <Navbar
+            activeSection={activeSection}
+            smoothScrollTo={smoothScrollTo}
+          />
 
-      <Footer />
-    </div>
+          <main>
+            <Hero smoothScrollTo={smoothScrollTo} />
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
+
+          <Footer />
+        </div>
+      </div>
+    </ReactLenis>
   );
 }
