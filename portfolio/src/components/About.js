@@ -1,28 +1,41 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
-import { FaAward, FaCertificate, FaDownload, FaGraduationCap, FaCode } from 'react-icons/fa';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { FaAward, FaCertificate, FaDownload, FaGraduationCap, FaCode, FaLaptopCode, FaRocket, FaBrain, FaEye } from 'react-icons/fa';
+import resumePdf from '../assets/UJJAWAL_RESUME.pdf';
+import mlCert from '../assets/Coursera Machine Learning with Python.pdf';
+import genAiCert from '../assets/Introduction to Generative AI Learning Path.pdf';
+import uxCert from '../assets/Google UX Design.pdf';
+import oracleCert from '../assets/ProfessionalCertificationDigitalCredentials20250629-28-mj4tbw.pdf';
+import awsCert from '../assets/infosis aws .pdf';
+import redHatCert from '../assets/eCertificate.pdf';
 
 const About = () => {
     const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     const stats = [
         {
-            label: "Major Projects",
-            value: "3+",
-            icon: <FaCode className="text-purple-400" />,
-            desc: "Full-stack applications"
+            label: "Projects",
+            value: "10+",
+            icon: <FaCode />,
+            color: "text-purple-400"
         },
         {
-            label: "Certifications",
+            label: "Certificates",
             value: "6+",
-            icon: <FaCertificate className="text-blue-400" />,
-            desc: "Industry recognized"
+            icon: <FaCertificate />,
+            color: "text-blue-400"
         },
         {
-            label: "Graduation",
-            value: "2027",
-            icon: <FaGraduationCap className="text-pink-400" />,
-            desc: "B.Tech CSE, Arya College Of Engineeering and IT"
+            label: "Experience",
+            value: "2+ Yrs",
+            icon: <FaLaptopCode />,
+            color: "text-pink-400"
         }
     ];
 
@@ -31,143 +44,149 @@ const About = () => {
             title: "Machine Learning with Python",
             issuer: "IBM",
             date: "2024",
-            icon: <FaAward />
+            icon: <FaAward />,
+            link: mlCert
         },
         {
             title: "Certified Generative AI Professional",
             issuer: "Oracle",
             date: "2024",
-            icon: <FaCertificate />
+            icon: <FaCertificate />,
+            link: oracleCert
         },
         {
             title: "UX Design",
             issuer: "Google",
             date: "2023",
-            icon: <FaAward />
+            icon: <FaAward />,
+            link: uxCert
         },
         {
             title: "Red Hat Certified System Administrator",
             issuer: "Red Hat",
             date: "2023",
-            icon: <FaCertificate />
+            icon: <FaCertificate />,
+            link: redHatCert
         },
         {
             title: "Generative AI Learning Path",
             issuer: "Google Cloud",
             date: "2024",
-            icon: <FaAward />
+            icon: <FaAward />,
+            link: genAiCert
         },
         {
             title: "AWS Certified Developer",
             issuer: "Infosys",
             date: "2024",
-            icon: <FaCertificate />
+            icon: <FaCertificate />,
+            link: awsCert
         }
     ];
 
     return (
-        <section id="about" ref={containerRef} className="py-32 relative z-10 overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-1/3 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
-            </div>
-
+        <section id="about" ref={containerRef} className="py-24 relative z-10 overflow-hidden">
             <div className="container mx-auto px-6 relative z-20">
+                {/* Header Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-16 text-center"
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 font-mono tracking-tighter">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6 font-mono tracking-tight text-white">
                         About Me
                     </h2>
+                    <div className="w-24 h-1 bg-white/20 mx-auto rounded-full"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
+                {/* Main Content - Clean & Centered */}
+                <div className="max-w-4xl mx-auto">
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="space-y-8 text-xl md:text-2xl text-gray-700 dark:text-gray-200 font-light leading-relaxed tracking-wide"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center space-y-8"
                     >
-                        <p className="first-letter:font-bold first-letter:text-purple-600 dark:first-letter:text-purple-400 first-letter:float-left">
-                            Hello! I'm <span className="text-gray-900 dark:text-white font-semibold">Ujjawal Bhardwaj</span>, Results-driven Computer Science Engineering student passionate about building high-quality, scalable software solutions. Skilled in developing full-stack applications using Python, JavaScript, React.js, Node.js and MongoDB. Recognized for problem-solving abilities, innovation, and a strong foundation in object-oriented programming and cloud-based architectures.
-                        </p>
-                        <div className="pt-6">
+                        <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                            <p>
+                                Hello! I'm <span className="text-white font-medium">Ujjawal Bhardwaj</span>, a results-driven <span className="text-white font-medium">Computer Science Engineering student</span> passionate about building high-quality, scalable software solutions.
+                            </p>
+                            <p>
+                                I specialize in <span className="text-white font-mono">Full Stack Development</span>, leveraging modern technologies like
+                                <span className="text-white"> Python, JavaScript, React.js, Node.js, and MongoDB</span>.
+                                My journey in tech is fueled by a curiosity to understand how things work and a drive to create impactful digital experiences.
+                            </p>
+                        </div>
+
+                        {/* Stats Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
+                            {stats.map((stat, idx) => (
+                                <div key={idx} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                                    <div className={`text-3xl mb-3 flex justify-center ${stat.color}`}>{stat.icon}</div>
+                                    <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                                    <div className="text-sm text-gray-400 uppercase tracking-wider">{stat.label}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="pt-8 pb-16">
                             <a
-                                href={require("../assets/UJJAWAL_RESUME.pdf")}
-                                download="Ujjawal_Bhardwaj_Resume.pdf"
-                                className="inline-flex items-center gap-3 px-8 py-4 bg-white/20 dark:bg-white/5 hover:bg-white/30 dark:hover:bg-white/10 border border-white/20 dark:border-white/10 hover:border-purple-500/50 text-gray-900 dark:text-white rounded-full font-medium transition-all hover:scale-105 group"
+                                href={resumePdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 text-white transition-all hover:scale-105"
                             >
-                                <FaDownload className="group-hover:animate-bounce" />
-                                <span>Download Resume</span>
+                                <FaEye /> <span>View Resume</span>
                             </a>
                         </div>
                     </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="grid grid-cols-1 gap-6"
-                    >
-                        {stats.map((stat, index) => (
-                            <div key={index} className="bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/20 dark:border-white/10 p-6 rounded-2xl flex items-center gap-6 hover:bg-white/50 dark:hover:bg-white/10 transition-colors group shadow-lg dark:shadow-none">
-                                <div className="p-4 bg-white/5 rounded-xl text-3xl group-hover:scale-110 transition-transform duration-300">
-                                    {stat.icon}
-                                </div>
-                                <div>
-                                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
-                                    <div className="text-gray-700 dark:text-white font-medium mb-1">{stat.label}</div>
-                                    <div className="text-sm text-gray-600 dark:text-gray-400 font-mono">{stat.desc}</div>
-                                </div>
-                            </div>
-                        ))}
-                    </motion.div>
                 </div>
 
-                {/* Certifications Grid */}
-                <div className="mt-32">
+                {/* Certifications Section */}
+                <div className="mt-16 border-t border-white/10 pt-20">
                     <motion.h3
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center font-mono"
+                        className="text-3xl font-bold text-white mb-12 text-center font-mono"
                     >
                         Certifications & Awards
                     </motion.h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {certs.map((cert, idx) => (
-                            <motion.div
+                            <motion.a
                                 key={idx}
+                                href={cert.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                                 whileHover={{ y: -5 }}
-                                className="relative group bg-white/40 dark:bg-white/5 border border-white/20 dark:border-white/10 p-6 rounded-2xl overflow-hidden hover:bg-white/50 dark:hover:bg-white/10 transition-all backdrop-blur-2xl shadow-lg dark:shadow-none"
+                                className="relative group bg-white/5 border border-white/10 p-6 rounded-2xl overflow-hidden hover:bg-white/10 transition-all backdrop-blur-sm block cursor-pointer"
                             >
                                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity rotate-12">
                                     <div className="text-8xl text-white">{cert.icon}</div>
                                 </div>
 
                                 <div className="relative z-10">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl flex items-center justify-center text-2xl text-white mb-6 border border-white/10 group-hover:border-purple-500/30 transition-colors">
+                                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-2xl text-white mb-6 border border-white/10 group-hover:border-white/20 transition-colors">
                                         {cert.icon}
                                     </div>
-                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 min-h-[3.5rem] group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+                                    <h3 className="text-lg font-bold text-white mb-3 line-clamp-2 min-h-[3.5rem]">
                                         {cert.title}
                                     </h3>
-                                    <div className="flex justify-between items-center text-sm text-gray-600 dark:text-gray-400 font-mono border-t border-white/10 dark:border-white/5 pt-4 mt-4">
+                                    <div className="flex justify-between items-center text-sm text-gray-400 font-mono border-t border-white/5 pt-4 mt-4">
                                         <span className="flex items-center gap-2">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                                            <span className="w-1.5 h-1.5 rounded-full bg-white/50"></span>
                                             {cert.issuer}
                                         </span>
                                         <span>{cert.date}</span>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </motion.a>
                         ))}
                     </div>
                 </div>
