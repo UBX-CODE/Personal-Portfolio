@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaDownload, FaProjectDiagram } from 'react-icons/fa';
 
 const Hero = ({ smoothScrollTo }) => {
 
@@ -47,13 +48,30 @@ const Hero = ({ smoothScrollTo }) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                        <button
-                            onClick={() => smoothScrollTo('projects')}
-                            className="px-8 py-4 border border-purple-500 text-purple-500 font-mono rounded hover:bg-purple-500/10 transition-all duration-300 mb-10"
-                        >
-                            Check out my work!
-                        </button>
-                    </motion.div>
+                        <div className="flex gap-6 justify-center">
+                            <a
+                                href="Ujjawal_Bhardwaj_Resume.pdf"
+                                download="Ujjawal_Bhardwaj_Resume.pdf"
+                                className="group relative px-8 py-4 bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/20"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                                <span className="relative flex items-center gap-3 text-gray-900 dark:text-white font-mono font-medium">
+                                    <FaDownload className="text-purple-600 dark:text-purple-400 group-hover:animate-bounce" />
+                                    Resume
+                                </span>
+                            </a>
+
+                            <button
+                                onClick={() => smoothScrollTo('projects')}
+                                className="group relative px-8 py-4 bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 hover:border-blue-500/50 shadow-lg hover:shadow-blue-500/20"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                                <span className="relative flex items-center gap-3 text-gray-900 dark:text-white font-mono font-medium">
+                                    <FaProjectDiagram className="text-blue-600 dark:text-blue-400 group-hover:rotate-12 transition-transform" />
+                                    Projects
+                                </span>
+                            </button>
+                        </div>                    </motion.div>
                 </div>
             </div>
         </section>

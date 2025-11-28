@@ -1,63 +1,97 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const LoadingScreen = () => {
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 2500);
-        return () => clearTimeout(timer);
-    }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Increased slightly to show off the animation
+    return () => clearTimeout(timer);
+  }, []);
 
-    return (
-        <AnimatePresence>
-            {loading && (
-                <motion.div
-                    initial={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="fixed inset-0 z-[100] bg-black flex items-center justify-center"
-                >
-                    <div className="flex flex-col items-center">
-                        <motion.div
-                            animate={{
-                                scale: [1, 1.2, 1],
-                                rotate: [0, 180, 360],
-                                borderRadius: ["20%", "50%", "20%"]
-                            }}
-                            transition={{
-                                duration: 2,
-                                ease: "easeInOut",
-                                times: [0, 0.5, 1],
-                                repeat: Infinity
-                            }}
-                            className="w-16 h-16 border-4 border-purple-500 mb-8"
-                        />
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5 }}
-                            className="text-white text-2xl font-mono tracking-widest"
-                        >
-                            INITIALIZING...
-                        </motion.h2>
-                        <motion.div
-                            className="w-48 h-1 bg-gray-800 mt-4 rounded-full overflow-hidden"
-                        >
-                            <motion.div
-                                initial={{ width: 0 }}
-                                animate={{ width: "100%" }}
-                                transition={{ duration: 2.3, ease: "easeInOut" }}
-                                className="h-full bg-purple-500"
-                            />
-                        </motion.div>
-                    </div>
-                </motion.div>
-            )}
-        </AnimatePresence>
-    );
+  return (
+    <AnimatePresence>
+      {loading && (
+        <motion.div
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center"
+        >
+          {/* Background with smoky/cloudy effect */}
+          <div className="absolute inset-0 bg-black flex flex-col items-center justify-center z-10">
+            <StyledWrapper>
+              <div className="loader" />
+            </StyledWrapper>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mt-8 text-white/50 font-mono text-sm tracking-[0.2em] uppercase"
+            >
+              Loading Experience
+            </motion.p>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 };
+
+const StyledWrapper = styled.div`
+  .loader {
+    display: block;
+    --height-of-loader: 4px;
+    --loader-color: #a855f7;
+    width: 200px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: rgba(255,255,255,0.1);
+    position: relative;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  }
+
+  .loader::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, #a855f7, #3b82f6, #a855f7);
+    background-size: 200% 100%;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 2s ease-in-out infinite, glowing 2s linear infinite;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+  }
+
+  @keyframes moving {
+    0% {
+      width: 0;
+      left: 0;
+      right: unset;
+    }
+    50% {
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+    100% {
+      width: 0;
+      right: 0;
+      left: unset;
+      margin-left: auto;
+    }
+  }
+
+  @keyframes glowing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+`;
 
 export default LoadingScreen;
