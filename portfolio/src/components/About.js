@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaAward, FaCertificate, FaDownload, FaGraduationCap, FaCode, FaLaptopCode, FaRocket, FaBrain, FaEye } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaAward, FaCertificate, FaCode, FaLaptopCode, FaEye } from 'react-icons/fa';
 import resumePdf from '../assets/UJJAWAL_RESUME.pdf';
 import mlCert from '../assets/Coursera Machine Learning with Python.pdf';
 import genAiCert from '../assets/Introduction to Generative AI Learning Path.pdf';
@@ -11,12 +11,6 @@ import redHatCert from '../assets/eCertificate.pdf';
 
 const About = () => {
     const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
-
-    const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     const stats = [
         {
