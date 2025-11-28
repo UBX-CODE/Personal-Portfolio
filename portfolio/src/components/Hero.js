@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload, FaProjectDiagram } from 'react-icons/fa';
+import Resume from '../assets/UJJAWAL_RESUME.pdf';
 
 const Hero = ({ smoothScrollTo }) => {
 
@@ -50,7 +51,7 @@ const Hero = ({ smoothScrollTo }) => {
                     >
                         <div className="flex gap-6 justify-center">
                             <a
-                                href="Ujjawal_Bhardwaj_Resume.pdf"
+                                href={Resume}
                                 download="Ujjawal_Bhardwaj_Resume.pdf"
                                 className="group relative px-8 py-4 bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/20 dark:hover:bg-white/10 hover:border-purple-500/50 shadow-lg hover:shadow-purple-500/20"
                             >
@@ -71,7 +72,8 @@ const Hero = ({ smoothScrollTo }) => {
                                     Projects
                                 </span>
                             </button>
-                        </div>                    </motion.div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
