@@ -12,10 +12,10 @@ const Contact = () => {
                     transition={{ duration: 0.6 }}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-mono">
+                    <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
                         <span className="text-gray-500">06.</span> Get In Touch
                     </h2>
-                    <p className="text-gray-400 max-w-xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
                         Whether you have a question or just want to say hi, I'll try my best to get back to you!
                     </p>
                 </motion.div>
@@ -28,10 +28,10 @@ const Contact = () => {
                         transition={{ duration: 0.6 }}
                         className="space-y-8"
                     >
-                        <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
-                            <h3 className="text-2xl font-bold text-white mb-6 font-mono">Contact Info</h3>
+                        <div className="bg-white/40 dark:bg-white/5 border border-white/20 dark:border-white/10 p-8 rounded-2xl backdrop-blur-2xl shadow-lg dark:shadow-none">
+                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 font-mono">Contact Info</h3>
                             <div className="space-y-6">
-                                <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
+                                <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                                     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">
                                         <FaEnvelope />
                                     </div>
@@ -41,7 +41,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
+                                <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                                     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">
                                         <FaMapMarkerAlt />
                                     </div>
@@ -57,7 +57,7 @@ const Contact = () => {
                                     href="https://www.linkedin.com/in/ujjawal-bhardwaj-643625372"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                                    className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-gray-900 dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
                                 >
                                     <FaLinkedin />
                                 </a>
@@ -65,7 +65,7 @@ const Contact = () => {
                                     href="https://github.com/UBX-CODE"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+                                    className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-gray-900 dark:text-white hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all"
                                 >
                                     <FaGithub />
                                 </a>
@@ -94,7 +94,7 @@ const Contact = () => {
                                         type="text"
                                         name="name"
                                         required
-                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors"
+                                        className="w-full bg-white/20 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-purple-500/50 transition-colors placeholder:text-gray-500"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -103,7 +103,7 @@ const Contact = () => {
                                         type="email"
                                         name="email"
                                         required
-                                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors"
+                                        className="w-full bg-white/20 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-purple-500/50 transition-colors placeholder:text-gray-500"
                                     />
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ const Contact = () => {
                                     type="text"
                                     name="subject"
                                     required
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors"
+                                    className="w-full bg-white/20 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-purple-500/50 transition-colors placeholder:text-gray-500"
                                 />
                             </div>
 
@@ -124,13 +124,13 @@ const Contact = () => {
                                     name="message"
                                     rows="4"
                                     required
-                                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors resize-none"
+                                    className="w-full bg-white/20 dark:bg-white/5 border border-white/20 dark:border-white/10 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-purple-500/50 transition-colors resize-none placeholder:text-gray-500"
                                 ></textarea>
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-white text-black font-bold py-4 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group"
+                                className="w-full bg-gray-900 dark:bg-white text-white dark:text-black font-bold py-4 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 group"
                             >
                                 Send Message
                                 <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />

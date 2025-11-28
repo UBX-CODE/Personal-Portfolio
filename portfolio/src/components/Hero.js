@@ -1,13 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = ({ smoothScrollTo }) => {
-    const containerRef = useRef(null);
 
     return (
         <section
             id="home"
-            ref={containerRef}
             className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
         >
             <div className="container mx-auto px-6 z-10">
@@ -24,7 +22,7 @@ const Hero = ({ smoothScrollTo }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="text-5xl md:text-8xl font-bold text-white mb-4 tracking-tight"
+                        className="text-5xl md:text-8xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight"
                     >
                         Ujjawal Bhardwaj.
                     </motion.h1>
@@ -32,7 +30,7 @@ const Hero = ({ smoothScrollTo }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="text-3xl md:text-6xl font-bold text-gray-400 mb-8 tracking-tight"
+                        className="text-3xl md:text-6xl font-bold text-gray-500 dark:text-gray-400 mb-8 tracking-tight"
                     >
                         I build things for the web.
                     </motion.h2>
@@ -40,9 +38,9 @@ const Hero = ({ smoothScrollTo }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
-                        className="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed mx-auto"
+                        className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed mx-auto"
                     >
-                        I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.
+                        Full-stack developer crafting agentic AI agents that think, act, and ship value on their own
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

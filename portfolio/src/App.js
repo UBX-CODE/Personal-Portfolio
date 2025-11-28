@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ReactLenis } from '@studio-freight/react-lenis';
 
@@ -16,10 +15,25 @@ import { BackgroundGradientAnimation } from './components/ui/BackgroundGradientA
 
 import './App.css';
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [theme, setTheme] = useState('dark');
+
+  // Theme toggle handler
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
+  // Apply theme class
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   // Smooth scroll function
   const smoothScrollTo = (targetId) => {
@@ -60,12 +74,35 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  const gradientProps = theme === 'dark' ? {
+    gradientBackgroundStart: "rgb(0, 0, 0)",
+    gradientBackgroundEnd: "rgb(10, 10, 10)",
+    firstColor: "50, 50, 50",
+    secondColor: "80, 80, 80",
+    thirdColor: "30, 30, 30",
+    fourthColor: "100, 100, 100",
+    fifthColor: "60, 60, 60",
+    pointerColor: "140, 100, 255"
+  } : {
+    gradientBackgroundStart: "rgb(255, 255, 255)",
+    gradientBackgroundEnd: "rgb(240, 240, 255)",
+    firstColor: "100, 180, 255",
+    secondColor: "255, 180, 255",
+    thirdColor: "180, 255, 255",
+    fourthColor: "255, 200, 200",
+    fifthColor: "255, 255, 180",
+    pointerColor: "100, 150, 255"
+  };
+
   return (
     <ReactLenis root>
-      <div className="min-h-screen relative bg-black text-white selection:bg-purple-500 selection:text-white font-sans">
+      <div className={`min-h-screen relative transition-colors duration-500 ${theme === 'dark' ? 'bg-black text-white' : 'bg-white text-gray-900'} selection:bg-purple-500 selection:text-white font-sans`}>
         <LoadingScreen />
 
-        <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 pointer-events-none">
+        <BackgroundGradientAnimation
+          containerClassName="fixed inset-0 z-0 pointer-events-none"
+          {...gradientProps}
+        >
           <div className="absolute inset-0 z-0"></div>
         </BackgroundGradientAnimation>
 
@@ -73,6 +110,8 @@ export default function App() {
           <Navbar
             activeSection={activeSection}
             smoothScrollTo={smoothScrollTo}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
 
           <main>

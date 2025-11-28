@@ -72,8 +72,8 @@ const Skills = () => {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 font-mono">
-                        <span className="text-purple-500">03.</span> Skills & Stack
+                    <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 font-mono">
+                        <span className="text-purple-600 dark:text-purple-500">03.</span> Skills & Stack
                     </h2>
                     <div className="h-1 w-20 bg-purple-500 rounded-full"></div>
                 </motion.div>
@@ -86,13 +86,13 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             whileHover={{ y: -5 }}
-                            className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 group"
+                            className="bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/20 dark:border-white/10 p-8 rounded-2xl hover:bg-white/50 dark:hover:bg-white/10 transition-all duration-300 group shadow-lg dark:shadow-none"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="text-3xl p-3 bg-white/5 rounded-xl text-white group-hover:scale-110 transition-transform duration-300">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-white font-mono tracking-tight">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white font-mono tracking-tight">
                                     {category.title}
                                 </h3>
                             </div>
@@ -101,7 +101,7 @@ const Skills = () => {
                                 {category.skills.map((skill, sIdx) => (
                                     <div
                                         key={sIdx}
-                                        className="flex items-center gap-2 px-3 py-1.5 bg-black/20 rounded-lg text-gray-300 text-sm border border-white/5 hover:text-white hover:border-white/20 transition-all cursor-default"
+                                        className="flex items-center gap-2 px-3 py-1.5 bg-black/5 dark:bg-black/20 rounded-lg text-gray-700 dark:text-gray-300 text-sm border border-black/5 dark:border-white/5 hover:text-gray-900 dark:hover:text-white hover:border-black/20 dark:hover:border-white/20 transition-all cursor-default"
                                     >
                                         <span className="text-purple-400">{skill.icon}</span>
                                         <span>{skill.name}</span>
