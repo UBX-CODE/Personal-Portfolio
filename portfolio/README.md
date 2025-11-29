@@ -1,6 +1,5 @@
 # 🚀 Ujjawal Bhardwaj - Personal Portfolio
 
-![Portfolio Banner](https://via.placeholder.com/1200x400?text=Ujjawal+Bhardwaj+Portfolio)
 
 A modern, high-performance, and interactive portfolio website designed to showcase my journey as a Computer Science Engineering student and Full Stack Developer. Built with the latest web technologies, this portfolio emphasizes visual aesthetics, smooth user experience, and responsiveness.
 
@@ -89,7 +88,7 @@ src/
 **Ujjawal Bhardwaj**
 
 - **LinkedIn**: [linkedin.com/in/ujjawal-bhardwaj-643625372](https://www.linkedin.com/in/ujjawal-bhardwaj-643625372)
-- **Email**: [ujjawal.bhardwaj@example.com](mailto:ujjawal.bhardwaj@example.com) (Replace with actual email if public)
+- **Email**: [ujjawal.bhardwaj1404@gmail.com](mailto:ujjawal.bhardwaj1404@gmail.com) (Replace with actual email if public)
 
 ---
 
