@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# 🚀 Ujjawal Bhardwaj - Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Portfolio Banner](https://via.placeholder.com/1200x400?text=Ujjawal+Bhardwaj+Portfolio)
 
-## Available Scripts
+A modern, high-performance, and interactive portfolio website designed to showcase my journey as a Computer Science Engineering student and Full Stack Developer. Built with the latest web technologies, this portfolio emphasizes visual aesthetics, smooth user experience, and responsiveness.
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- **🎨 Modern & "Funky Tech" Design**: A visually striking interface featuring glassmorphism, vibrant gradients, and a clean layout.
+- **🌓 Dark & Light Mode**: Seamless theme switching with persistent state, ensuring accessibility and visual comfort in any lighting.
+- **⚡ Smooth Animations**: 
+  - **Framer Motion**: For fluid component entrances and interactions.
+  - **GSAP**: For advanced scroll-triggered effects and complex animations.
+  - **Lenis**: For buttery-smooth inertia scrolling across the entire site.
+- **📱 Fully Responsive**: Optimized for all screen sizes, ensuring a perfect experience on desktops, tablets, and mobile devices.
+- **💼 Comprehensive Sections**:
+  - **Hero**: Immersive landing section with parallax effects and dynamic background.
+  - **About**: Professional bio, stats, and a showcase of certifications & awards.
+  - **Skills**: Visual representation of technical proficiency in various technologies.
+  - **Projects**: Detailed project cards with hover effects and links to live demos/repos.
+  - **Contact**: Functional contact form and social media integration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend Framework**: [React.js](https://reactjs.org/)
+- **Styling**: 
+  - [Tailwind CSS](https://tailwindcss.com/) (Utility-first styling)
+  - [Styled Components](https://styled-components.com/) (Component-level styling)
+- **Animations**:
+  - [Framer Motion](https://www.framer.com/motion/)
+  - [GSAP (GreenSock)](https://greensock.com/gsap/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Smooth Scroll**: [@studio-freight/react-lenis](https://github.com/studio-freight/react-lenis)
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these instructions to get a copy of the project up and running on your local machine.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v18.x recommended)
+- npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/UBX-CODE/Personal-Portfolio.git
+    cd Personal-Portfolio
+    ```
 
-### `npm run eject`
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3.  **Start the development server**
+    ```bash
+    npm start
+    ```
+    The app will open in your browser at `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📂 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+src/
+├── assets/          # Images, PDFs (Resume, Certs)
+├── components/      # Reusable React components
+│   ├── ui/          # UI specific components (Backgrounds, etc.)
+│   ├── About.js     # About section
+│   ├── Contact.js   # Contact section
+│   ├── Hero.js      # Hero section
+│   ├── Navbar.js    # Navigation bar
+│   ├── Projects.js  # Projects showcase
+│   ├── Skills.js    # Skills visualization
+│   └── ...
+├── App.js           # Main application component & routing
+├── index.css        # Global styles & Tailwind directives
+└── ...
+```
 
-## Learn More
+## 📬 Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Ujjawal Bhardwaj**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **LinkedIn**: [linkedin.com/in/ujjawal-bhardwaj-643625372](https://www.linkedin.com/in/ujjawal-bhardwaj-643625372)
+- **Email**: [ujjawal.bhardwaj@example.com](mailto:ujjawal.bhardwaj@example.com) (Replace with actual email if public)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Built with ❤️ by Ujjawal Bhardwaj*
