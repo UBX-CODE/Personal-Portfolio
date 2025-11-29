@@ -88,7 +88,7 @@ src/
 **Ujjawal Bhardwaj**
 
 - **LinkedIn**: [linkedin.com/in/ujjawal-bhardwaj-643625372](https://www.linkedin.com/in/ujjawal-bhardwaj-643625372)
-- **Email**: [ujjawal.bhardwaj1404@gmail.com](mailto:ujjawal.bhardwaj1404@gmail.com) (Replace with actual email if public)
+- **Email**: [ujjawalbhardwaj1404@gmail.com](mailto:ujjawalbhardwaj1404@gmail.com) (Replace with actual email if public)
 
 ---
 
