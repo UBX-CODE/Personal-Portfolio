@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaAward, FaCertificate, FaCode, FaLaptopCode, FaEye } from 'react-icons/fa';
 import resumePdf from '../assets/UJJAWAL_RESUME.pdf';
