@@ -5,9 +5,9 @@ import resumePdf from '../assets/UJJAWAL_RESUME.pdf';
 import mlCert from '../assets/Coursera Machine Learning with Python.pdf';
 import genAiCert from '../assets/Introduction to Generative AI Learning Path.pdf';
 import uxCert from '../assets/Google UX Design.pdf';
-import oracleCert from '../assets/ProfessionalCertificationDigitalCredentials20250629-28-mj4tbw.pdf';
+import redHatCert from '../assets/ProfessionalCertificationDigitalCredentials20250629-28-mj4tbw.pdf';
 import awsCert from '../assets/infosis aws .pdf';
-import redHatCert from '../assets/eCertificate.pdf';
+import oracleCert from '../assets/eCertificate.pdf';
 
 const About = () => {
     const containerRef = useRef(null);
