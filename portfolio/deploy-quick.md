@@ -7,6 +7,7 @@
 3. **Click "New site from Git"**
 4. **Select your portfolio repository**
 5. **Build settings**:
+   - Base directory: `portfolio` (IMPORTANT: Set this because your project is in a subfolder)
    - Build command: `npm run build`
    - Publish directory: `build`
 6. **Click "Deploy site"**
@@ -68,4 +69,4 @@ npm start  # Test locally
 # (Just connect your GitHub repo)
 ```
 
-**Recommendation**: Use Netlify or Vercel - they're the fastest and most reliable! 
+**Recommendation**: Use Netlify or Vercel - they're the fastest and most reliable!
